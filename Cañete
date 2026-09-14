@@ -1,1 +1,52 @@
+import { useState } from 'react'
+import heroImg from './assets/hero.png'
+import reactLogo from './assets/react.svg'
+import viteLogo from './assets/vite.svg'
+import './App.css'
 
+function App() {
+  const [count, setCount] = useState(0)
+
+  return (
+    <>
+      <section id="center">
+        <div className="hero">
+          <img src={heroImg} className="hero-img" />
+          <img src={reactLogo} className="logo react" />
+          <img src={viteLogo} className="logo" />
+        </div>
+        
+        <div>
+          <h1>Counter</h1>
+          <p>Count: {count}</p>
+        </div>
+        
+        <div className="buttons-container">
+          <button
+            type="button"
+            className="counter"
+            onClick={() => setCount((count) => count + 1)}
+          >
+            Increment
+          </button>
+
+          <button
+            type="button"
+            className="counter"
+            onClick={() => setCount((count) => count - 1)}
+          >
+            Decrement
+          </button>
+        </div>
+      </section>
+      
+      <div className="ticks"></div>
+      
+      <section id="next-steps">
+        <div id="docs">
+          <svg className="icon" role="presentation">...</svg>
+        </div>
+      </section>
+    </>
+  )
+}
